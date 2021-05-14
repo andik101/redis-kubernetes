@@ -40,7 +40,8 @@ If you will reinstall or upgrade the Redis, your data will be automatically back
 
 > **Tip**: If you delete the StorageClass or PVC all your data will be lose.
 
-The docker image used for this deployment is the Bitnami maintained Redis chart
+The docker image used for this deployment is the Bitnami maintained Redis chart.
+
 
 ### Cluster topologies
 
@@ -53,7 +54,6 @@ This configuration does install the redis with `cluster.enabled=false`, it will 
 
 For operations, access the service using port 6379, and query the current master using (redis-cli or k8s exec)
 
-In case the current master crashes, the Cluster containers will elect a new master node.
 
 
 ### Using password
