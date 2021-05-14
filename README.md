@@ -21,7 +21,7 @@ $ kubectl apply -f redis-statefulset.yaml
 
 The command deploys Redis on the Kubernetes cluster in the default configuration. 
 
-> **Tip**: Your data are mount in a k8s cluster volume named: redis-ssd *as you can check the redis-statefulset.yaml
+> **Tip**: Your data are mount in your k8s cluster storage with 2Gi volume size specified.
 
 ## Uninstalling the Redis
 
