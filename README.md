@@ -20,7 +20,6 @@ $ kubectl apply -f redis-statefulset.yaml
 ```
 
 The command deploys Redis on the Kubernetes cluster in the default configuration. 
-The [Parameters](#parameters) section lists the parameters that can be configured during installation.
 
 > **Tip**: Your data are mount in a k8s cluster volume named: redis-ssd *as you can check the redis-statefulset.yaml
 
@@ -39,22 +38,20 @@ $ kubectl delete -f redis-statefulset.yaml
 The commands remove Redis Kubernetes components associated with, but does not delete the data because they are stored in PVC.
 If you will reinstall or upgrade the Redis, your data will be automatically backup.
 
-If you delete the StorageClass or PVC name: redis-ssd, all your data will be lose.
-
+> **Tip**: If you delete the StorageClass or PVC all your data will be lose.
 
 The docker image used for this deployment is the Bitnami maintained Redis chart
-
 
 ### Cluster topologies
 
 #### Default: Master
 
-This configurtion does installing the redis with `cluster.enabled=false`, it will deploy a Redis master StatefulSet (only one master node allowed). Two services will be exposed:
+This configurtion does install the redis with `cluster.enabled=false`, it will deploy a Redis master StatefulSet. One service will be exposed:
 
    - Redis Master service: Points to the master, where read-write operations can be performed
    - Redis service: Exposes port 6379
 
-For operations, access the service using port 6379, and query the current master using (redis-cli or k8s exex)
+For operations, access the service using port 6379, and query the current master using (redis-cli or k8s exec)
 
 In case the current master crashes, the Cluster containers will elect a new master node.
 
@@ -69,5 +66,3 @@ To use a password file for Redis you need to create a secret containing the pass
 
 By default, the redis mounts a [Persistent Volume](http://kubernetes.io/docs/user-guide/persistent-volumes/) at the `/data` path. The volume is created using dynamic volume provisioning. 
 Also a Persistent Volume Claim is cereated and it is specifed during installation and mounted in the hostPath.
-
-
