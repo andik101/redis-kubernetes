@@ -52,7 +52,7 @@ This configuration does install the redis with `cluster.enabled=false`, it will 
    - Redis Master service: Points to the master, where read-write operations can be performed
        > **Note**: Redis service: Exposes port 6379
 
-For operations, access the service using port 6379, and query the current master using (redis-cli or k8s exec)
+For operations, access the service using port 6379, and query the current master using `(redis-cli or kubectl exec)`
 
 
 ### Using password
