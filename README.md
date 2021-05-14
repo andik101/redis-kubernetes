@@ -43,7 +43,7 @@ If you will reinstall or upgrade the Redis, your data will be automatically back
 The docker image used for this deployment is the Bitnami maintained Redis chart.
 
 
-### Cluster topologies
+## Cluster topologies
 
 #### Default: Master
 
