@@ -44,8 +44,6 @@ If you delete the StorageClass or PVC name: redis-ssd, all your data will be los
 
 The docker image used for this deployment is the Bitnami maintained Redis chart
 
-```
-
 
 ### Cluster topologies
 
