@@ -52,9 +52,9 @@ The docker image used for this deployment is the Bitnami maintained Redis chart
 This configurtion does installing the redis with `cluster.enabled=false`, it will deploy a Redis master StatefulSet (only one master node allowed). Two services will be exposed:
 
    - Redis Master service: Points to the master, where read-write operations can be performed
-   > **Tip**: Redis service: Exposes port 6379
+   - Redis service: Exposes port 6379
 
-For perations, access the service using port 6379, and query the current master using (redis-cli or k8s exex)
+For operations, access the service using port 6379, and query the current master using (redis-cli or k8s exex)
 
 In case the current master crashes, the Cluster containers will elect a new master node.
 
