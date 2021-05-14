@@ -9,7 +9,7 @@ This repo maintains the configuration yaml files for [Redis](https://github.com/
 
 ## Installing the Redis 
 
-To install the redis in kubernetes cluster:
+To install redis in kubernetes cluster:
 
 ```bash
 $ kubectl apply -f redis-headless-configmap.yaml
@@ -25,7 +25,7 @@ The command deploys Redis on the Kubernetes cluster in the default configuration
 
 ## Uninstalling the Redis
 
-To uninstall/delete the `redis` deployment:
+To uninstall/delete redis deployment:
 
 ```bash
 $ kubectl delete -f redis-headless-configmap.yaml
@@ -46,7 +46,7 @@ The docker image used for this deployment is the Bitnami maintained Redis chart
 
 #### Default: Master
 
-This configurtion does install the redis with `cluster.enabled=false`, it will deploy a Redis master StatefulSet. One service will be exposed:
+This configuration does install the redis with `cluster.enabled=false`, it will deploy a Redis master StatefulSet. One service will be exposed:
 
    - Redis Master service: Points to the master, where read-write operations can be performed
    - Redis service: Exposes port 6379
@@ -57,7 +57,7 @@ In case the current master crashes, the Cluster containers will elect a new mast
 
 
 ### Using password
-In this case is not used a username and password for accessin the redis service.
+In this case is not used a username and password for accessing the redis service.
 
 To use a password file for Redis you need to create a secret containing the password.
 
@@ -65,4 +65,4 @@ To use a password file for Redis you need to create a secret containing the pass
 ## Persistence
 
 By default, the redis mounts a [Persistent Volume](http://kubernetes.io/docs/user-guide/persistent-volumes/) at the `/data` path. The volume is created using dynamic volume provisioning. 
-Also a Persistent Volume Claim is cereated and it is specifed during installation and mounted in the hostPath.
+Also, a Persistent Volume Claim is created and it is specified during installation and mounted in the hostPath.
