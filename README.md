@@ -7,7 +7,7 @@ Manifests for redis to deploy in kubernetes cluster
 
 This repo maintains the configuration yaml files for [Redis](https://github.com/bitnami/bitnami-docker-redis) deployment on a [Kubernetes](http://kubernetes.io) cluster.
 
-## Installing the Redis 
+## Installing Redis 
 
 To install redis in kubernetes cluster:
 
@@ -23,7 +23,7 @@ The command deploys Redis on the Kubernetes cluster in the default configuration
 
 > **Tip**: Your data are mount in your k8s cluster storage with 2Gi volume size specified.
 
-## Uninstalling the Redis
+## Uninstalling Redis
 
 To uninstall/delete redis deployment:
 
@@ -38,29 +38,27 @@ $ kubectl delete -f redis-statefulset.yaml
 The commands remove Redis Kubernetes components associated with, but does not delete the data because they are stored in PVC.
 If you will reinstall or upgrade the Redis, your data will be automatically backup.
 
-> **Tip**: If you delete the StorageClass or PVC all your data will be lose.
+> **Note**: If you delete the StorageClass or PVC all your data will be lose.
 
 The docker image used for this deployment is the Bitnami maintained Redis chart.
 
 
 ## Cluster topologies
 
-#### Default: Master
+### Default: Master
 
 This configuration does install the redis with `cluster.enabled=false`, it will deploy a Redis master StatefulSet. One service will be exposed:
 
    - Redis Master service: Points to the master, where read-write operations can be performed
-   - Redis service: Exposes port 6379
+   > **Note**: Redis service: Exposes port 6379
 
 For operations, access the service using port 6379, and query the current master using (redis-cli or k8s exec)
-
 
 
 ### Using password
 In this case is not used a username and password for accessing the redis service.
 
 To use a password file for Redis you need to create a secret containing the password.
-
 
 ## Persistence
 
