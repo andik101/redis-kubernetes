@@ -5,7 +5,7 @@ Manifests for redis to deploy in kubernetes cluster
 
 ## Introduction
 
-This repo maintains the configuration yaml fils for [Redis](https://github.com/bitnami/bitnami-docker-redis) deployment on a [Kubernetes](http://kubernetes.io) cluster.
+This repo maintains the configuration yaml files for [Redis](https://github.com/bitnami/bitnami-docker-redis) deployment on a [Kubernetes](http://kubernetes.io) cluster.
 
 ## Installing the Redis 
 
@@ -36,7 +36,7 @@ $ kubectl delete -f redis-service.yaml
 $ kubectl delete -f redis-statefulset.yaml
 ```
 
-The commands removes Redis Kubernetes components associated with, but does not delete the data because they are stored in PVC.
+The commands remove Redis Kubernetes components associated with, but does not delete the data because they are stored in PVC.
 If you will reinstall or upgrade the Redis, your data will be automatically backup.
 
 If you delete the StorageClass or PVC name: redis-ssd, all your data will be lose.
@@ -45,33 +45,6 @@ If you delete the StorageClass or PVC name: redis-ssd, all your data will be los
 The docker image used for this deployment is the Bitnami maintained Redis chart
 
 ```
-
-
-## Parameters
-
-The following table lists the configurable parameters of the Redis chart and their default values.
-
-
-Specify each parameter using the `--set key=value[,key=value]` argument to `helm install`. For example,
-
-```bash
-$ helm install my-release \
-  --set password=secretpassword \
-    stable/redis
-```
-
-The above command sets the Redis server password to `secretpassword`.
-
-Alternatively, a YAML file that specifies the values for the parameters can be provided while installing the chart. For example,
-
-```bash
-$ helm install my-release -f values.yaml stable/redis
-```
-
-> **Tip**: You can use the default [values.yaml](values.yaml)
-
-> **Note for minikube users**: Current versions of minikube (v0.24.1 at the time of writing) provision `hostPath` persistent volumes that are only writable by root. Using chart defaults cause pod failure for the Redis pod as it attempts to write to the `/bitnami` directory. Consider installing Redis with `--set persistence.enabled=false`. See minikube issue [1990](https://github.com/kubernetes/minikube/issues/1990) for more information.
-
 
 
 ### Cluster topologies
