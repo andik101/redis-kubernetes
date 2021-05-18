@@ -3,10 +3,10 @@ kind: StorageClass
 apiVersion: storage.k8s.io/v1beta1
 metadata:
   name: redis-ssd 
-provisioner: kubernetes.io/aws-ebs
+provisioner: kubernetes.io/aws-ebs #this is used in AWS, in on-prem you have to change it or remove
 parameters:
   type: gp2
-  zones: eu-central-1a #, eu-central-1b, eu-central-1c
+  zones: eu-central-1a #, eu-central-1b, eu-central-1c #thos zones are used in AWS, for on-prem you have to set your cluster dns or remove it
   fsType: xfs
 #  To create encrypted ebs volume using kms
 #  encrypted: "true"
