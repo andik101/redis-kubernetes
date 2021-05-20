@@ -9,7 +9,7 @@ This repo maintains the configuration yaml files for [Redis](https://github.com/
 
 ## Installing Redis 
 
-To install redis in kubernetes cluster:
+To install redis run the following commands:
 
 ```bash
 $ kubectl apply -f redis-headless-configmap.yaml
